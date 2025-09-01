@@ -1,120 +1,74 @@
-name: Bug Report
-description: File a bug report.
-title: "[Bug]: "
+name: 🐞 Bug Report
+description: Something unexpected happened, errors or badcases
 body:
-  - type: dropdown
-    id: series
+  - type: markdown
     attributes:
-      label: Model Series
-      description: |
-        What series of Qwen models were you running? 
-        Please note that there may not be response for previous model series.
-      options:
-        - Qwen3
-        - Qwen2.5
-      default: 0
-    validations:
-      required: true
-  - type: input
-    attributes:
-      label: What are the models used?
-      description: |
-        Please list the model used, e.g., Qwen3-8B, Qwen3-8B-GGUF, etc.
-        Note that we only maintain models at <https://huggingface.co/Qwen> and <https://www.modelscope.com/organization/qwen>.
-      placeholder: "ex: Qwen3-xxx"
-    validations:
-      required: true
-  - type: input
-    attributes:
-      label: What is the scenario where the problem happened?
-      description: | 
-        Please briefly describe the scenario, including the type of use and the framework, 
-        e.g., inference with `transformers`, deployment with `vllm`, SFT with `llama-factory`, tool calling with `ollama`, etc.
-      placeholder: "ex: [type of usage] with [framework]"
-    validations:
-      required: true
-  - type: checkboxes
-    attributes:
-      label: Is this a known issue?
-      description: |
-        Please first check if you have followed the usage guide in related documentation and if the issue is known: 
-        either a workaround is avaiable or the issue has been already reported.
-      options:
-        - label: I have followed [the GitHub README](https://github.com/QwenLM/Qwen3).
-          required: true
-        - label: I have checked [the Qwen documentation](https://qwen.readthedocs.io) and cannot find an answer there.
-          required: true
-        - label: I have checked the documentation of the related framework and cannot find useful information.
-          required: true
-        - label: I have searched [the issues](https://github.com/QwenLM/Qwen3/issues?q=is%3Aissue) and there is not a similar one.
-          required: true
-  - type: textarea
-    attributes:
-      label: Information about environment
-      description: |
-        Please provide information about you environment, 
-        e.g., the software versions and the information on the OS, GPUs, CUDA, and NVIDIA Driver if GPUs are used.
-        
-        For example:
-        - OS: Ubuntu 24.04
-        - Python: Python 3.11
-        - GPUs: 4 x NVIDIA A20
-        - NVIDIA driver: 560 (from `nvidia-smi`)
-        - CUDA compiler: 12.4 (from `nvcc -V`)
-        - PyTorch: 2.6.0+cu124 (from `python -c "import troch; print(torch.__version__)"`)
+      value: |
+        **We appreciate your time and effort in filing this report. ❤**
 
-        Python packages (from `pip list`)
-        ```
-        Package                                  Version
-        ---------------------------------------- -----------
-        accelerate                               0.33.0
-        ...
-        ```
-    validations:
-      required: true
-  - type: textarea
-    attributes:
-      label: Log output
-      description: | 
-        Please copy and paste any relevant log output. 
-        This will be automatically formatted into code, so no need for backticks. 
-        If the log suggested things like
-        ```
-        RuntimeError: CUDA error: device-side assert triggered
-        CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
-        For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
-        ```
-        please follow the instructions and set the corresponding parameters.
-      render: shell
-    validations:
-      required: true
+        Issues are a vital part of open-source collaboration. They help identify and resolve real-world problems, improve the project for everyone, and create a transparent, well-documented knowledge base that benefits the entire community. **By reporting an issue, you're not just solving a problem for yourself --- you're helping others who may encounter the same challenge.**
+
+        To ensure your issue is addressed efficiently and effectively, please follow these guidelines when submitting:
+
+        1.  **Use English**  
+            Please write your issue in English. This ensures the widest possible audience can understand and contribute. Most translation tools also work best with English, making your report more accessible globally.
+
+        2.  **Choose a clear and descriptive title**  
+            Your title should summarize the issue clearly and include relevant details such as the model ID (e.g., `Qwen3-8B`, `Qwen3-30B-A3B-Instruct-2507-FP8`) and the framework or environment (e.g., `transformers`, `vllm`).  
+            Example: `Qwen3-8B-Instruct-2507 generates gibberish with SGLang under CUDA 12.1`
+
+        3.  **Provide reproducible steps**  
+            Help us help you: include a minimal, self-contained code snippet and clear instructions to reproduce the issue. Be sure to specify:
+            - Your environment (OS, Python version, package versions)
+            - The exact commands or code used; the prompts and the sampling parameters in terms of badcases
+            - Expected vs. actual behavior
+
+        4.  **Be precise and concise**  
+            - Focus on **one issue per report**. If you have multiple bugs, please open separate issues.
+            - Include only the context and code necessary to understand and reproduce the problem.
+            - Think of your issue as a future reference for others --- aim to make it a helpful documentation entry.
+
+        Also keep in mind that this repository is dedicated to the open-weight versions of the **Qwen language models**. 
+        - For **Qwen-Coder**, **Qwen-VL**, **Qwen-Omni**, or other specialized models, refer to their respective repositories.
+        - For **Qwen API services** or closed-source variants, please contact Alibaba Cloud support directly.
+
   - type: textarea
     attributes:
       label: Description
       description: |
         Please describe the problem you have encountered.
-        The following template is recommended.
-        Remember to delete the
-      value: |
-        #### Steps to reproduce
-
-        This happens to Qwen3-xB-xxx and xxx.
-        The problem can be reproduced with the following steps:
-        1. ...
-        2. ...
-
-        #### Expected results
-
-        The results are expected to be ...
-
-        #### Attempts to fix
-
-        I have tried several ways to fix this, including:
-        1. ...
-        2. ...
-
-        #### Anything else helpful for investigation
-
-        I find that this problem also happens to ... 
     validations:
       required: true
+
+  - type: textarea
+    attributes:
+      label: Reproduction
+      description: | 
+        Please provide minimal reproducible code. For badcases, Qwen Chat share links are also good.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Logs
+      description: | 
+        Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+        If the log is too long, feel free to put it in a public gist and link it in the issue: https://gist.github.com. 
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Environment Information
+      description: |
+        Please provide information about you environment, e.g., the software versions and the information on the OS, GPUs, CUDA, and NVIDIA Driver if GPUs are used.
+    validations:
+      required: true
+  
+  - type: checkboxes
+    attributes:
+      label: Known Issue
+      options:
+        - label: The issue hasn't been already addressed in Documentation, Issues, and Discussions.
+  
