@@ -24,7 +24,6 @@ jobs:
           days-before-pr-stale: -1
           days-before-pr-close: -1
           operations-per-run: 128
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: dessant/lock-threads@v5
         with:
           issue-inactive-days: 30
@@ -37,4 +36,4 @@ jobs:
             This pull request has been automatically locked since there
             has not been any recent activity after it was closed.
             Please open a new issue for related bugs.
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
