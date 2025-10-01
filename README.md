@@ -1,4 +1,4 @@
-# Qwen3
+# Qwen3 - THE BEST OPEN SOURCE MODEL
 
 <p align="center">
     <img src="https://qianwen-res.oss-accelerate-overseas.aliyuncs.com/logo_qwen3.png" width="400"/>
