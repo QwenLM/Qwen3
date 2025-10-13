@@ -211,7 +211,7 @@ The quick workaround is to pass [a custom chat template](../../source/assets/qwe
 [llama-cli](https://github.com/ggml-org/llama.cpp/tree/master/tools/main) is a console program which can be used to chat with LLMs.
 Simple run the following command where you place the llama.cpp programs:
 ```shell
-./llama-cli -hf Qwen/Qwen3-8B-GGUF:Q8_0 --jinja --color -ngl 99 -fa -sm row --temp 0.6 --top-k 20 --top-p 0.95 --min-p 0 -c 40960 -n 32768 --no-context-shift
+./llama-cli -hf Qwen/Qwen3-8B-GGUF:Q8_0 --jinja --color -ngl 99 -sm row --temp 0.6 --top-k 20 --top-p 0.95 --min-p 0 -c 40960 -n 32768 --no-context-shift
 ```
 
 Here are some explanations to the above command:
@@ -226,7 +226,7 @@ Here are some explanations to the above command:
     If there are multiple GPUs, it will offload to all the GPUs.
     You can use `-dev` to control the devices used and `-sm` to control which kinds of parallelism is used.
     For example, `-ngl 99 -dev cuda0,cuda1 -sm row` means offload all layers to GPU 0 and GPU1 using the split mode row. 
-    Adding `-fa` may also speed up the generation.
+    Adding `-fa on` may also speed up the generation.
 
 -   **Sampling Parameters**: llama.cpp supports [a variety of sampling methods](https://github.com/ggml-org/llama.cpp/tree/master/tools/main#generation-flags) and has default configuration for many of them.
     It is recommended to adjust those parameters according to the actual case and the recommended parameters from Qwen3 modelcard could be used as a reference.
@@ -253,7 +253,7 @@ The core command is similar to that of llama-cli.
 In addition, it supports thinking content parsing and tool call parsing.
 
 ```shell
-./llama-server -hf Qwen/Qwen3-8B-GGUF:Q8_0 --jinja --reasoning-format deepseek -ngl 99 -fa -sm row --temp 0.6 --top-k 20 --top-p 0.95 --min-p 0 -c 40960 -n 32768 --no-context-shift
+./llama-server -hf Qwen/Qwen3-8B-GGUF:Q8_0 --jinja --reasoning-format deepseek -ngl 99 -sm row --temp 0.6 --top-k 20 --top-p 0.95 --min-p 0 -c 40960 -n 32768 --no-context-shift
 ```
 
 By default, the server will listen at `http://localhost:8080` which can be changed by passing `--host` and `--port`.
