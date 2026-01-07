@@ -17,7 +17,7 @@ To learn more about Qwen3, feel free to read our documentation \[[EN](https://qw
 
 - Quickstart: the basic usages and demonstrations;
 - Inference: the guidance for the inference with Transformers, including batch inference, streaming, etc.;
-- Run Locally: the instructions for running LLM locally on CPU and GPU, with frameworks like llama.cpp and Ollama;
+- Run Locally: the instructions for running LLM locally on CPU and GPU, with frameworks like llama.cpp, Ollama, and LM Studio;
 - Deployment: the demonstration of how to deploy Qwen for large-scale inference with frameworks like SGLang, vLLM, TGI, etc.;
 - Quantization: the practice of quantizing LLMs with GPTQ, AWQ, as well as the guidance for how to make high-quality quantized GGUF files;
 - Training: the instructions for post-training, including SFT and RLHF (TODO) with frameworks like Axolotl, LLaMA-Factory, etc.

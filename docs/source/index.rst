@@ -85,6 +85,7 @@ Join our community by joining our `Discord <https://discord.gg/yPEP2vHTu4>`__ an
 
    run_locally/llama.cpp
    run_locally/ollama
+   run_locally/lmstudio
    run_locally/mlx-lm
 
 .. toctree::
