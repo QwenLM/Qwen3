@@ -1,16 +1,16 @@
 # LM Studio
 
-[LM Studio](https://lmstudio.ai) is a powerful desktop application for experimenting & developing with local AI models directly on your computer. It supports Qwen models and it supports both GGUF (llama.cpp) and MLX formats.
+[LM Studio](https://lmstudio.ai) is a powerful desktop application for experimenting & developing with local AI models directly on your computer. You can run multiple kinds of Qwen models: from dense LLMs, VLMs, to MoEs and reasoning variants. LM Studio supports both GGUF (llama.cpp) and MLX formats for fast and efficient inference, completely privately on your machine.
 
 ## Download and Install LM Studio
 
 Download the installer for macOS, Windows, or Linux from the [LM Studio website](https://lmstudio.ai/download).
 
-## Download Qwen GGUF models 
+## Get Qwen models 
 
 Qwen models are much loved by the community, and they frequently get featured in Staff Picks. Explore staff picked models within the app or in [https://lmstudio.ai/models](https://lmstudio.ai/models). Find Qwen models that fit your machine, and click Run in LM Studio! You can also search and download Qwen models from within the LM Studio app, or by using the `lms` CLI ([learn more](https://lmstudio.ai/docs/cli/local-models/get)).
 
-**Using the in-app downloader**
+**Using the in-app model downloader**
 1. Open the LM Studio app and search for any model by presssing ⌘ + Shift + M on Mac, or Ctrl + Shift + M on PC. 
 2. Search for "Qwen."   
 3. Pick a result that looks interesting and LM Studio will suggest the optimal variants for your hardware.  
@@ -24,7 +24,7 @@ On the model card, click the "Use this model" dropdown and select LM Studio. Thi
 
 ## Advanced: Use your own converted GGUF Qwen model file
 
-If you converted a Qwen model to GGUF yourself, you can use LM Studio’s CLI `lms` to load your model into LM Studio.
+If you had converted a Qwen model to GGUF yourself, you can use LM Studio’s CLI `lms` to load your model into LM Studio.
 
 1. Use:
 ```bash
