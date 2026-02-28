@@ -129,3 +129,10 @@ Join our community by joining our `Discord <https://discord.gg/yPEP2vHTu4>`__ an
    framework/function_call
    framework/LlamaIndex
    framework/Langchain
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Observability
+   :hidden:
+
+   observability/mlflow
