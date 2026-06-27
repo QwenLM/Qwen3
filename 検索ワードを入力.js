@@ -148,14 +148,11 @@ Zapier
 Zapier から AUTORO を起動する
 Marketing
 マーケティングに関するアクション一覧です。
-
 GetGA4Report
 概要
 GetGA4Report は、Google Analytics4 からレポートを取得するアクションです。パラメーターを設定することで、カスタマイズされたレポートを作成することができます。レポートの対象期間は、startDate、endDate で設定します。取得したい値は、metrics で選択します。ページ別、ブラウザ別などの分析軸を設定したい場合は、dimensions で指定します。リクエストで返されるディメンションまたは指標を制限したい場合は、metricFilter または dimensionFilter で指定します。返却されるレスポンスはデフォルトで最大1000行です。
-
 パラメーター
 *は、必須パラメーター
-
 名前	型	概要	例
 provider*	文字列	google analytics4 からデータを取得するのに必要なプロバイダーID	ga_e7502c3b8b8147410ce2
 propertyId*	数値	プロパティID	12345678
@@ -168,21 +165,11 @@ dimensionFilter	オブジェクト	リクエストで返されるデータを制
 pageSize	数値	リクエストで返されるデータの数。最大で、100,000行。	1000 (デフォルト値)
 フィルタについての説明
 フィルタの作成方法
-
 metricFilter や dimensionFilter を設定することで取得するデータの値を制限することができます。以下の手順によって 公式ドキュメント からフィルタを作成してください。
-
 公式ドキュメントの「Try this method」の「Request body」から metricFilter または dimensionFilter を選択し、フィルタオブジェクトを作成する。
-
-
 作成したフィルタの metricFilter または dimensionFilter の内側のオブジェクトをコピーする
-
-
 GetGA4Report アクションの metricFilter または dimensionFilter パラメータに貼り付ける
-
-
 フィルタの書き方
-
 metricFilter, dimensionFilter の書き方についての説明。 詳しくは公式ドキュメントをご参照ください。
-
 基本のフィルタ
 キーに filter 、値に条件を設定します。
