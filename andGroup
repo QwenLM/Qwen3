@@ -1,0 +1,10 @@
+{
+  "andGroup": {
+    "expressions": [{
+      "filter": {
+        "fieldName":"sessionDefaultChannelGroup",
+        "stringFilter": {
+          "value":"Organic Search"
+        }
+      }
+    },
