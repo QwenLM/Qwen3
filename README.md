@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/qwenlm-qwen3-badge.png)](https://mseep.ai/app/qwenlm-qwen3)
+
 # Qwen3
 
 <p align="center">
