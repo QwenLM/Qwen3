@@ -130,7 +130,7 @@ def parse_thinking_content(messages):
 
 ## Parsing Tool Calls
 
-For tool calling with Transformers, please refer to [our guide on Function Calling](../framework/function_call.md#hugging-face-transformers).
+For tool calling with Transformers, please refer to [our guide on Function Calling](../framework/function_call.md).
 
 ## Serving Quantized models
 
