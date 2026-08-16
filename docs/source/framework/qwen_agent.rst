@@ -68,6 +68,7 @@ yourself.
    #         # 'generate_cfg': {
    #         #     # When using the Dash Scope API, pass the parameter of whether to enable thinking mode in this way
    #         #     'enable_thinking': False,
+   #         #     'thinking_budget': 12000,  # required when enable_thinking=True; must be a positive integer <= model max thinking length
    #         # },
    # }
    # llm_cfg = {
@@ -79,7 +80,8 @@ yourself.
    #     # 'generate_cfg': {
    #     #     # When using Dash Scope OAI API, pass the parameter of whether to enable thinking mode in this way
    #     #     'extra_body': {
-   #     #         'enable_thinking': False
+   #     #         'enable_thinking': False,
+   #     #         'thinking_budget': 12000,  # required when enable_thinking=True
    #     #     },
    #     # },
    # }
