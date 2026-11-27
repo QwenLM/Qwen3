@@ -62,13 +62,14 @@ def get_content(
         call_args["request_timeout"] = API_REQUEST_TIMEOUT
 
     result = ""
+    completion = None
     try:
         completion = call_func(
             **call_args,
         )
-        result = completion.choices[0].message.content
+        result = completion.choices[0].message.content or ""
     except AttributeError as e:
-        err_msg = getattr(completion, "message", "")
+        err_msg = getattr(completion, "message", "") if completion is not None else str(e)
         if err_msg:
             time.sleep(random.randint(25, 35))
             raise ClientError(err_msg) from e
@@ -82,8 +83,8 @@ def get_content(
         if (
             "maximum context length" in err_msg
         ):  # or "Expecting value: line 1 column 1 (char 0)" in err_msg:
-            logging.warn(f"max length exceeded. Error: {err_msg}")
-            return {"gen": "", "end_reason": "max length exceeded"}
+            logging.warning(f"max length exceeded. Error: {err_msg}")
+            return ""
         time.sleep(1)
         raise ClientError(err_msg) from e
     return result
@@ -92,9 +93,13 @@ def get_content(
 if __name__ == "__main__":
     conversation_history = []
     user_input = "Hello!"
-    res = get_content(user_input, "http://10.77.249.36:8030/v1", "Qwen/QwQ")
+    res = get_content(
+        user_input, "http://10.77.249.36:8030/v1", "Qwen/QwQ", 0.7, 0.8, 1024, 20, 1.0
+    )
     print(f"Response: {res}")
 
     user_input = "How are you?"
-    res = get_content(user_input, "http://10.77.249.36:8030/v1", "Qwen/QwQ")
+    res = get_content(
+        user_input, "http://10.77.249.36:8030/v1", "Qwen/QwQ", 0.7, 0.8, 1024, 20, 1.0
+    )
     print(f"Response: {res}")

@@ -134,6 +134,9 @@ def main():
         total_completed = sum(completed_counts.values())
         print(f"Found {total_completed} completed samples from previous run")
     else:
+        output_dir = os.path.dirname(output_file)
+        if output_dir:
+            os.makedirs(output_dir, exist_ok=True)
         with open(output_file, "w", encoding="utf-8") as g:
             completed_counts = dict()
 
