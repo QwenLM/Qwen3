@@ -10,6 +10,8 @@ from arc_agi_1 import compute_scores_arc_agi_1
 ALL_TASKS['arc_agi_1'] = compute_scores_arc_agi_1
 
 def get_after_think(text):
+    if not isinstance(text, str):
+        return ""
     parts = text.split("\n</think>\n\n", 1)
     if len(parts) > 1:
         return parts[1]
@@ -69,7 +71,9 @@ def main():
     print(f"Results Details Path: {details_path}")
     print(f"Task Name: {task_name}")
     print("--------------------\n")
-    os.makedirs(os.path.dirname(details_path), exist_ok=True)
+    details_dir = os.path.dirname(details_path)
+    if details_dir:
+        os.makedirs(details_dir, exist_ok=True)
 
     with open(eval_input_path, "r", encoding="utf-8") as f:
         data = [json.loads(line) for line in f]
